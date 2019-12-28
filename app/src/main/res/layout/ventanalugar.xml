@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/ventanaTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:gravity="center"
+        android:text="Añadir Favorito"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/ventanaNombreLugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ventanaTitulo"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Nombre Lugar"
+        android:inputType="textVisiblePassword"
+        android:maxLines="2"></EditText>
+
+    <EditText
+        android:id="@+id/ventanaLatitudLugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ventanaNombreLugar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Latitud"
+        android:inputType="textVisiblePassword"
+        android:maxLines="2"></EditText>
+
+    <EditText
+        android:id="@+id/ventanaLongitudLugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ventanaLatitudLugar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Longitud"
+        android:inputType="textVisiblePassword"
+        android:maxLines="2"></EditText>
+
+
+
+    <Button
+        android:id="@+id/saveLugarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ventanaLongitudLugar"
+        android:layout_marginTop="10dp"
+        android:background="?attr/colorError"
+        android:text="Guardar"
+        android:textColor="@android:color/white"></Button>
+
+</RelativeLayout>

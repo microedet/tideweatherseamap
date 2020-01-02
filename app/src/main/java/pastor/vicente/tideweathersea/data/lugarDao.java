@@ -12,16 +12,16 @@ import java.util.List;
 import pastor.vicente.tideweathersea.Lugar;
 
 @Dao
-public interface LugarDao {
+public interface lugarDao {
 
     @Insert
-    public long insertProducto(Lugar lugar);
+    public long insertLugar(Lugar lugar);
 
     @Update
-    public int updateProducto(Lugar lugar);
+    public int updateLugar(Lugar lugar);
 
     @Delete
-    public int deleteProducto(Lugar lugar);
+    public int deleteLugar(Lugar lugar);
 
     @Query("SELECT * FROM lugares where id=:id")
     public Lugar getLugar(long id);

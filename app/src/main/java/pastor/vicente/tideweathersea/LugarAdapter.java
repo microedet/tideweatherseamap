@@ -69,8 +69,8 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolder> 
         return lugares.size();
     }
 
-    public void addLugares(List<Lugar> listaProductos){
-        lugares =listaProductos;
+    public void addLugares(List<Lugar> listaLugares){
+        lugares =listaLugares;
         notifyDataSetChanged();
     }
 

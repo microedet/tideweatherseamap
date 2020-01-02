@@ -2,6 +2,7 @@ package pastor.vicente.tideweathersea.data;
 
 import android.app.Application;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -30,7 +31,7 @@ public class LugarViewModel extends AndroidViewModel {
 
     public void addLugar(Lugar lugar) {
 
-        new AsyncAddLugarDB().execute(lugar);
+        new AsyncAddLugarDb().execute(lugar);
     }
 
     public void updateLugar(Lugar lugar) {
@@ -44,7 +45,7 @@ public class LugarViewModel extends AndroidViewModel {
     }
 
 
-    public class AsyncAddLugarDB extends AsyncTask<Lugar, Void, Long> {
+    public class AsyncAddLugarDb extends AsyncTask<Lugar, Void, Long> {
         Lugar lugar;
 
 
@@ -54,7 +55,8 @@ public class LugarViewModel extends AndroidViewModel {
 
             if (lugares.length != 0) {
                 lugar = lugares[0];
-                id = dbRoom.lugarDao().insertProducto(lugares[0]);
+                //id = dbRoom.lugarDao().insertLugar(lugares[0]);
+                id = dbRoom.lugarDao().insertLugar(lugares[0]);
                 lugar.setId(id);
             }
             return id;
@@ -73,16 +75,18 @@ public class LugarViewModel extends AndroidViewModel {
         }
     }
 
+
     public class AsyncEditLugarDB extends AsyncTask<Lugar, Void, Integer> {
 
         public AsyncEditLugarDB(){}
 
 
         @Override
-        protected Integer doInBackground(Lugar... productos) {
+        protected Integer doInBackground(Lugar... lugares) {
             int updatedRows = 0;
-            if (productos.length != 0) {
-                updatedRows = dbRoom.lugarDao().updateProducto(productos[0]);
+            if (lugares.length != 0) {
+                updatedRows = dbRoom.lugarDao().updateLugar(lugares[0]);
+
             }
 
             return updatedRows;
@@ -113,7 +117,7 @@ public class LugarViewModel extends AndroidViewModel {
         protected Integer doInBackground(Lugar...lugares) {
             int deleteRows = 0;
             if (lugares.length != 0) {
-                deleteRows = dbRoom.lugarDao().deleteProducto(lugares[0]);
+                deleteRows = dbRoom.lugarDao().deleteLugar(lugares[0]);
             }
 
             return deleteRows;

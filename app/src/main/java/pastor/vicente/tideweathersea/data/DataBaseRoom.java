@@ -10,7 +10,7 @@ import pastor.vicente.tideweathersea.Lugar;
 
 @Database(entities ={Lugar.class}, version=2, exportSchema = false)
 public abstract class DataBaseRoom extends RoomDatabase {
-    public abstract LugarDao lugarDao();
+    public abstract lugarDao lugarDao();
 
     private static DataBaseRoom INSTANCE = null;
 

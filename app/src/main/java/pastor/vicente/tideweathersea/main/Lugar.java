@@ -1,4 +1,4 @@
-package pastor.vicente.tideweathersea;
+package pastor.vicente.tideweathersea.main;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;

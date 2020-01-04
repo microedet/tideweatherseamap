@@ -1,11 +1,14 @@
-package pastor.vicente.tideweathersea;
+package pastor.vicente.tideweathersea.fragment;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,14 +24,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-import pastor.vicente.tideweathersea.data.DataBaseRoom;
+import pastor.vicente.tideweathersea.main.Lugar;
+import pastor.vicente.tideweathersea.main.LugarAdapter;
+import pastor.vicente.tideweathersea.R;
 import pastor.vicente.tideweathersea.data.LugarViewModel;
-
+import pastor.vicente.tideweathersea.main.MainActivity;
 
 
 public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonClikedListener {
@@ -39,13 +44,22 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
     RecyclerView recyclerView;
     LugarViewModel viewModel;
     LugarAdapter adapter;
-    private DataBaseRoom dbRoom;
+    CardView cardView;
     Context context;
+    Enviodecardview callback;
 
-    private OnFragmentInteractionListener mListener;
+    View view;
+
+
+    //interface
+    private Enviodecardview enviodecardview;
 
     public Listadolugares() {
         // Required empty public constructor
+    }
+
+    public interface Enviodecardview{
+        public void enviodecardview (Lugar lugar);
     }
 
 
@@ -55,8 +69,7 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_listadolugares, container, false);
-        //viewModel = ViewModelProviders.of(this).get(LugarViewModel.class);
+         view= inflater.inflate(R.layout.fragment_listadolugares, container, false);
 
        FloatingActionButton fab = view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -67,22 +80,11 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
             }
         });
 
-        /*FloatingActionButton fab = view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
-
-        recyclerView = (RecyclerView)view.findViewById(R.id.listadolugares);
+        recyclerView = view.findViewById(R.id.listadolugares);
         recyclerView.setHasFixedSize(true);
-        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-       // adapter = new LugarAdapter(context, lugarList, this);
         adapter=new LugarAdapter(getContext(),lugarList,this);
         recyclerView.setAdapter(adapter);
 
@@ -106,7 +108,7 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
 
     private void ventana() {
         builder = new AlertDialog.Builder(getContext());
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.ventanalugar, null);
+         view = LayoutInflater.from(getContext()).inflate(R.layout.ventanalugar, null);
 
         builder.setView(view);
 
@@ -127,7 +129,8 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
                    // Toast.makeText(context, "guardado", Toast.LENGTH_SHORT).show();
                     Log.d("informacion","nombrelugar : "+nombreLugar+" latitudLugar : "+latitudLugar+" longitudlugar : "+longitudLugar);
                 }else{
-                    Toast.makeText(context, "problema guardado", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(context, "problema guardado", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -147,46 +150,22 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
     }
 
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
 
-    /*
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+
+        try {
+            callback = (Enviodecardview) context;
+        }catch (ClassCastException e){
+            throw new ClassCastException(context.toString()+ " Debería implementar el interfaz OnNameSent");
         }
     }
-    */
     
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
+
+
 
     @Override
     public void onButtonCliked(View v, Lugar lugar) {
@@ -198,15 +177,25 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
 
         }else if (v.getId() == R.id.deleteicon) {
 
-            deleteProduct(lugar);
+            deleteLugar(lugar);
+        }else if(v.getId() == R.id.cardViewLugar){
+
+            Cargardetalles(lugar);
         }
+
+    }
+
+    private void Cargardetalles(final Lugar lugar) {
+        //Toast.makeText(getContext(), "lanzado desde fragment", Toast.LENGTH_SHORT).show();
+        //comunicaFragments.datosmeteo(lugar);
+        //enviodecardview();
 
     }
 
     private void editLugar(final Lugar lugar) {
 
         builder = new AlertDialog.Builder(getContext());
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.ventanalugar, null);
+        view = LayoutInflater.from(getContext()).inflate(R.layout.ventanalugar, null);
 
         builder.setView(view);
 
@@ -240,8 +229,12 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
         });
     }
 
-    private void deleteProduct(Lugar lugar) {
+    private void deleteLugar(Lugar lugar) {
         viewModel.deleteLugar(lugar);
     }
 
-}
+
+    }
+
+
+

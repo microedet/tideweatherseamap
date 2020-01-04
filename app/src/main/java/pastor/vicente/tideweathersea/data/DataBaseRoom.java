@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import pastor.vicente.tideweathersea.Lugar;
+import pastor.vicente.tideweathersea.main.Lugar;
 
 @Database(entities ={Lugar.class}, version=2, exportSchema = false)
 public abstract class DataBaseRoom extends RoomDatabase {

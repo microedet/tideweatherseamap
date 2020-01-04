@@ -2,7 +2,6 @@ package pastor.vicente.tideweathersea.data;
 
 import android.app.Application;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -11,7 +10,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import pastor.vicente.tideweathersea.Lugar;
+import pastor.vicente.tideweathersea.main.Lugar;
 
 public class LugarViewModel extends AndroidViewModel {
     private LiveData<List<Lugar>> lugaresList;
@@ -65,10 +64,10 @@ public class LugarViewModel extends AndroidViewModel {
         @Override
         protected void onPostExecute(Long id) {
             if (id == -1) {
-                Toast.makeText(getApplication(), "error añadiendo el producto", Toast.LENGTH_LONG)
+                Toast.makeText(getApplication(), "error añadiendo el lugar", Toast.LENGTH_LONG)
                         .show();
             } else {
-                Toast.makeText(getApplication(), "producto añadido", Toast.LENGTH_SHORT)
+                Toast.makeText(getApplication(), "lugar añadido", Toast.LENGTH_SHORT)
                         .show();
             }
 
@@ -126,10 +125,10 @@ public class LugarViewModel extends AndroidViewModel {
         @Override
         protected void onPostExecute(Integer deleteRows) {
             if (deleteRows == 0) {
-                Toast.makeText(getApplication(), "error Borrando el producto", Toast.LENGTH_LONG)
+                Toast.makeText(getApplication(), "error Borrando el lugar", Toast.LENGTH_LONG)
                         .show();
             } else {
-                Toast.makeText(getApplication(),"producto Borrado", Toast.LENGTH_LONG)
+                Toast.makeText(getApplication(),"lugar Borrado", Toast.LENGTH_LONG)
                         .show();
 
             }

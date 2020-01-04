@@ -9,7 +9,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import pastor.vicente.tideweathersea.Lugar;
+import pastor.vicente.tideweathersea.main.Lugar;
 
 @Dao
 public interface lugarDao {

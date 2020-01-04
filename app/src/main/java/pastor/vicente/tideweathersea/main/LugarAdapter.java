@@ -1,16 +1,21 @@
-package pastor.vicente.tideweathersea;
+package pastor.vicente.tideweathersea.main;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import pastor.vicente.tideweathersea.R;
 
 public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolder> {
 
@@ -44,11 +49,22 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolder> 
         viewHolder.nombreLugar.setText(l.getNombreLugar());
         viewHolder.latitud.setText(l.getLatitud());
         viewHolder.longitud.setText(l.getLongitud());
+        viewHolder.cardView.setRadius(l.getId());
+       viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("vicente2","el dato es "+lugares.get(position));
+                listener.onButtonCliked(view, lugares.get(position));
+
+               // Toast.makeText(context, "lanzado desde 2fragment", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         viewHolder.editProductIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.onButtonCliked(view, lugares.get(position));
+                Log.e("vicente2","el datos es "+lugares.get(position));
 
             }
         });
@@ -83,6 +99,8 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolder> 
         TextView longitud;
         ImageView editProductIcon;
         ImageView deleteProductIcon;
+        CardView cardView;
+
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -93,6 +111,8 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolder> 
             longitud=itemView.findViewById(R.id.Longitud);
             editProductIcon = itemView.findViewById(R.id.udpateicon);
             deleteProductIcon = itemView.findViewById(R.id.deleteicon);
+            cardView=itemView.findViewById(R.id.cardViewLugar);
+
 
 
         }

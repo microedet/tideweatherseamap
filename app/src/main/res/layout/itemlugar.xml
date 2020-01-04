@@ -18,7 +18,11 @@ android:layout_margin="10dp">
         android:id="@+id/Lugar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pto de Cadiz" />
+        android:paddingLeft="12dp"
+        android:paddingTop="3dp"
+        android:text="Pto de Cadiz"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,14 +33,15 @@ android:layout_margin="10dp">
             android:id="@+id/Latitud"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.8"
+            android:paddingLeft="12dp"
             android:text="Latitud" />
 
         <ImageView
             android:id="@+id/deleteicon"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.2"
             app:srcCompat="@android:drawable/ic_delete" />
 
     </LinearLayout>
@@ -51,14 +56,15 @@ android:layout_margin="10dp">
             android:id="@+id/Longitud"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.8"
+            android:paddingLeft="12dp"
             android:text="Longitud" />
 
         <ImageView
             android:id="@+id/udpateicon"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.2"
             app:srcCompat="@android:drawable/ic_input_add" />
     </LinearLayout>
 

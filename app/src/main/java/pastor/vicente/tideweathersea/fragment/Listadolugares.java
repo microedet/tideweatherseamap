@@ -180,15 +180,18 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
             deleteLugar(lugar);
         }else if(v.getId() == R.id.cardViewLugar){
 
-            Cargardetalles(lugar);
+            //Cargardetalles(lugar);
+            ((MainActivity) v.getContext()).enviodecardview(lugar);
         }
 
     }
 
     private void Cargardetalles(final Lugar lugar) {
-        //Toast.makeText(getContext(), "lanzado desde fragment", Toast.LENGTH_SHORT).show();
-        //comunicaFragments.datosmeteo(lugar);
-        //enviodecardview();
+        Toast.makeText(getContext(), "lanzado desde fragment", Toast.LENGTH_SHORT).show();
+        //((MainActivity) v.getContext()).confirmConnection(address);
+        // datosmeteo(lugar);
+       // enviodecardvi
+
 
     }
 

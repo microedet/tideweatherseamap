@@ -1,27 +1,32 @@
 package pastor.vicente.tideweathersea.main;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.FragmentTransaction;
 
+
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
+
+
+import java.util.List;
 
 import pastor.vicente.tideweathersea.R;
 import pastor.vicente.tideweathersea.fragment.Datosmeteo;
 import pastor.vicente.tideweathersea.fragment.Listadolugares;
 import pastor.vicente.tideweathersea.data.DataBaseRoom;
 
-public class MainActivity extends AppCompatActivity  implements  Listadolugares.Enviodecardview{
+public class MainActivity extends AppCompatActivity  implements  Listadolugares.Enviodecardview {
 
 
     private DataBaseRoom dbRoom;
     CardView cardView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +37,8 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.contenedor,new Listadolugares())
+                .replace(R.id.contenedor, new Listadolugares())
                 .commit();
-
 
 
     }
@@ -63,20 +67,27 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
     }
 
     @Override
-    protected  void onDestroy(){
+    protected void onDestroy() {
 
         dbRoom.close();
         super.onDestroy();
     }
 
 
-
     @Override
     public void enviodecardview(Lugar lugar) {
-        Datosmeteo datosmeteo=(Datosmeteo) getSupportFragmentManager().findFragmentById(R.id.datosmeteo);
-        if(datosmeteo!=null){
+        Toast.makeText(getApplicationContext(), "lanzado desde el main", Toast.LENGTH_SHORT).show();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.contenedor, new Datosmeteo())
+                .commit();
+
+
+        /*Datosmeteo datosmeteo = (Datosmeteo) getSupportFragmentManager().findFragmentById(R.id.datosmeteo);
+        if (datosmeteo != null) {
             datosmeteo.datosmeteo(lugar);
-        }else{
+        } else {
 
            /* Intent intent=new Intent(this, DetallesEmailActivity.class);
             intent.putExtra("correo", email);
@@ -85,4 +96,4 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
 
 
     }
-}
+

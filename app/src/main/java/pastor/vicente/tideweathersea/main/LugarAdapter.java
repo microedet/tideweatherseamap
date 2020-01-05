@@ -49,7 +49,7 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolder> 
         viewHolder.nombreLugar.setText(l.getNombreLugar());
         viewHolder.latitud.setText(l.getLatitud());
         viewHolder.longitud.setText(l.getLongitud());
-        viewHolder.cardView.setRadius(l.getId());
+        //viewHolder.cardView.setRadius(l.getId());
        viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

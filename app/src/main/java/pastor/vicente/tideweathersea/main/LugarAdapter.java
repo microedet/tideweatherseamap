@@ -49,14 +49,12 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolder> 
         viewHolder.nombreLugar.setText(l.getNombreLugar());
         viewHolder.latitud.setText(l.getLatitud());
         viewHolder.longitud.setText(l.getLongitud());
-        //viewHolder.cardView.setRadius(l.getId());
-       viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+        viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.e("vicente2","el dato es "+lugares.get(position));
                 listener.onButtonCliked(view, lugares.get(position));
 
-               // Toast.makeText(context, "lanzado desde 2fragment", Toast.LENGTH_SHORT).show();
             }
         });
 

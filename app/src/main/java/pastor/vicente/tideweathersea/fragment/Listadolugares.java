@@ -180,8 +180,11 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
             deleteLugar(lugar);
         }else if(v.getId() == R.id.cardViewLugar){
 
-            //Cargardetalles(lugar);
+
+
             ((MainActivity) v.getContext()).enviodecardview(lugar);
+
+
         }
 
     }

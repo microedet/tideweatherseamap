@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 
 import android.util.Log;
@@ -76,22 +77,23 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
 
     @Override
     public void enviodecardview(Lugar lugar) {
-        Toast.makeText(getApplicationContext(), "lanzado desde el main", Toast.LENGTH_SHORT).show();
+
+        //Cargardetalles(lugar);
+        Bundle datosAEnviar = new Bundle();
+        // Aquí pon todos los datos que quieras en formato clave, valor
+
+        datosAEnviar.putString("latitud", lugar.getLatitud());
+        datosAEnviar.putString("longitud", lugar.getLongitud());
+        Fragment fragmento=new Datosmeteo();
+        fragmento.setArguments(datosAEnviar);
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.contenedor, new Datosmeteo())
+                .replace(R.id.contenedor, fragmento)
+                .addToBackStack(null)
                 .commit();
 
 
-        /*Datosmeteo datosmeteo = (Datosmeteo) getSupportFragmentManager().findFragmentById(R.id.datosmeteo);
-        if (datosmeteo != null) {
-            datosmeteo.datosmeteo(lugar);
-        } else {
-
-           /* Intent intent=new Intent(this, DetallesEmailActivity.class);
-            intent.putExtra("correo", email);
-            startActivity(intent);*/
         }
 
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,14 +34,21 @@ public class Datosmeteo extends Fragment {
         View view= inflater.inflate(R.layout.fragment_datosmeteo, container, false);
         textView = view.findViewById(R.id.textdatosmeteo);
 
+        Bundle datosRecuperados = getArguments();
+        String latitud = datosRecuperados.getString("latitud");
+        Log.e("datosvicente","latitud "+latitud);
+        textView.setText(latitud);
+
+        //textView.setText(latitud);
+
         return view;
     }
 
 
-    public void datosmeteo(Lugar lugar) {
+   /* public void datosmeteo(Lugar lugar) {
 
         textView.setText(lugar.getLatitud());
-    }
+    }*/
 
 
 }

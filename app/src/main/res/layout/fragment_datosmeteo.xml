@@ -4,13 +4,20 @@
     android:id="@+id/datosmeteo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Datosmeteo">
+    tools:context=".fragment.DatosMeteoFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/textdatosmeteo"
+        android:id="@+id/textViewResult"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/textViewResult2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
 
 </FrameLayout>

@@ -8,17 +8,12 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
-
-import java.util.List;
 
 import pastor.vicente.tideweathersea.R;
-import pastor.vicente.tideweathersea.fragment.Datosmeteo;
+import pastor.vicente.tideweathersea.fragment.DatosMeteoFragment;
 import pastor.vicente.tideweathersea.fragment.Listadolugares;
 import pastor.vicente.tideweathersea.data.DataBaseRoom;
 
@@ -84,7 +79,7 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
 
         datosAEnviar.putString("latitud", lugar.getLatitud());
         datosAEnviar.putString("longitud", lugar.getLongitud());
-        Fragment fragmento=new Datosmeteo();
+        Fragment fragmento=new DatosMeteoFragment();
         fragmento.setArguments(datosAEnviar);
 
         getSupportFragmentManager()

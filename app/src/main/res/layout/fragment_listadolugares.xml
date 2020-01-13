@@ -5,15 +5,9 @@
     android:id="@+id/framelayoutlistadolugares"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_primary"
+    android:background="@color/colorMareas"
     tools:context=".fragment.Listadolugares">
 
-    <!-- TODO: Update blank fragment layout -->
-    <!--<androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listadolugares"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/itemlugar" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listadolugares"
@@ -27,6 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/colorTemperatura"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </FrameLayout>

@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorSol">#1D2680</color>
+    <color name="colorLuna">#2E5480</color>
+    <color name="colorTemperatura">#3A49FF</color>
+    <color name="colorMareas">#0F1340</color>
+    <color name="colorDatosMeteo">#FFFFFF</color>
 </resources>

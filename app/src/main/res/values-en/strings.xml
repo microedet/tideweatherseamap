@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">tideweathersea</string>
+    <string name="puesta_sol">Sunset</string>
+    <string name="salida_sol">Sunrise</string>
+    <string name="puesta_luna">Moonset</string>
+    <string name="salida_luna">Moonrise</string>
+    <string name="nombre_lugar">Place:</string>
+    <string name="fecha">"Date "</string>
+    <string name="mareas">Mareas</string>
+</resources>

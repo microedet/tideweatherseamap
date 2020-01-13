@@ -50,14 +50,13 @@
         android:maxLines="2"></EditText>
 
 
-
     <Button
         android:id="@+id/saveLugarButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/ventanaLongitudLugar"
         android:layout_marginTop="10dp"
-        android:background="?attr/colorError"
+        android:background="@color/colorTemperatura"
         android:text="Guardar"
         android:textColor="@android:color/white"></Button>
 

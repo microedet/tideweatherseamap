@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
         Bundle datosAEnviar = new Bundle();
         // Aquí pon todos los datos que quieras en formato clave, valor
 
+        datosAEnviar.putString("nombrelugar",lugar.getNombreLugar());
         datosAEnviar.putString("latitud", lugar.getLatitud());
         datosAEnviar.putString("longitud", lugar.getLongitud());
         Fragment fragmento=new DatosMeteoFragment();

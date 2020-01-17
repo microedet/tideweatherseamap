@@ -12,6 +12,10 @@ public class Astronomy {
         this.mintempC = mintempC;
     }
 
+    public Astronomy(){
+
+    }
+
     public String getSunrise() {
         return sunrise;
     }

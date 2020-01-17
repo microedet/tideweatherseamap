@@ -1,5 +1,7 @@
 package pastor.vicente.tideweathersea.main;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,10 +33,21 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.contenedor, new Listadolugares())
-                .commit();
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        if (networkInfo != null && networkInfo.isConnected()) {
+            // Si hay conexión a Internet en este momento
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.contenedor, new Listadolugares())
+                    .commit();
+
+        } else {
+            // No hay conexión a Internet en este momento
+        }
+
 
 
     }
@@ -62,13 +75,14 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
         return super.onOptionsItemSelected(item);
     }
 
+    /*
     @Override
     protected void onDestroy() {
 
         dbRoom.close();
         super.onDestroy();
     }
-
+*/
 
     @Override
     public void enviodecardview(Lugar lugar) {

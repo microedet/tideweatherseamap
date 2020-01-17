@@ -128,10 +128,10 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
                     saveLugar(nombreLugar.getText().toString(), latitudLugar.getText().toString(),longitudLugar.getText().toString());
                    // Toast.makeText(context, "guardado", Toast.LENGTH_SHORT).show();
                     Log.d("informacion","nombrelugar : "+nombreLugar+" latitudLugar : "+latitudLugar+" longitudlugar : "+longitudLugar);
-                }else{
+                }/*else{
                    Toast.makeText(context, "problema guardado", Toast.LENGTH_SHORT).show();
 
-                }
+                }*/
             }
         });
 

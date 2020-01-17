@@ -8,6 +8,9 @@ public class Tides {
         this.tideHeight_mt = tideHeight_mt;
     }
 
+    public Tides() {
+    }
+
     public String getTideTime() {
         return tideTime;
     }

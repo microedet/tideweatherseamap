@@ -9,8 +9,8 @@
     android:layout_marginLeft="15dp"
     android:layout_marginTop="10dp"
     android:layout_marginRight="15dp"
-    app:cardCornerRadius="10dp"
     android:elevation="50dp"
+    app:cardCornerRadius="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
@@ -23,10 +23,13 @@
             android:id="@+id/Lugar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
             android:paddingLeft="12dp"
             android:paddingTop="3dp"
             android:text="Pto de Cadiz"
-            android:textSize="24sp"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -35,19 +38,33 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/titulolatitud"
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.09"
+                android:paddingLeft="11dp"
+                android:text="Latitud :"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/Latitud"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:paddingLeft="12dp"
-                android:text="Latitud" />
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.2"
+                android:paddingLeft="8dp"
+                android:text="Latitud"
+                android:textAlignment="viewStart" />
 
             <ImageView
                 android:id="@+id/deleteicon"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                app:srcCompat="@android:drawable/ic_menu_delete" />
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_weight="0.1"
+                android:padding="3dp"
+                app:srcCompat="@drawable/trash" />
 
         </LinearLayout>
 
@@ -58,19 +75,33 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/titulolongitud"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.11"
+                android:paddingLeft="11dp"
+                android:text="Longitud :"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/Longitud"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:paddingLeft="12dp"
-                android:text="Longitud" />
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.2"
+                android:paddingLeft="9dp"
+                android:text="Longitud"
+                android:textAlignment="viewStart" />
 
             <ImageView
                 android:id="@+id/udpateicon"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                app:srcCompat="@android:drawable/ic_menu_edit" />
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_weight="0.1"
+                android:padding="3dp"
+                app:srcCompat="@drawable/edit" />
         </LinearLayout>
 
     </LinearLayout>

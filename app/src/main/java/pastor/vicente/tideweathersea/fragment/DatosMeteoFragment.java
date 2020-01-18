@@ -126,6 +126,7 @@ public class DatosMeteoFragment extends Fragment {
                       Meteo meteo= QueryUtils.jsonParse(response);
 
                       //con la respuesta de meteo
+                       String fech=meteo.getAstronomy().getDate();
                        String salsol=meteo.getAstronomy().getSunset();
                        String ponsol=meteo.getAstronomy().getSunrise();
                        String salluna=meteo.getAstronomy().getMoonset();
@@ -138,7 +139,7 @@ public class DatosMeteoFragment extends Fragment {
                        puestaluna.setText(puesluna);
                        maximatemperaruta.setText(maxtemp);
                        minimatemperatura.setText(mintemp);
-
+                       fecha.setText(fech);
                        adapter.addall(meteo.getTides());
                    }
 
@@ -152,6 +153,7 @@ public class DatosMeteoFragment extends Fragment {
         requestQueue.add(request);
         return view;
     }
+
 }
 
 

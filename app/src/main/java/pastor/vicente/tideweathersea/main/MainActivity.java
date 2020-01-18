@@ -39,10 +39,12 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
         if (networkInfo != null && networkInfo.isConnected()) {
             // Si hay conexión a Internet en este momento
 
+            //para que pinte si no hay fragment
+            if(savedInstanceState==null){
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.contenedor, new Listadolugares())
-                    .commit();
+                    .commit();}
 
         } else {
             // No hay conexión a Internet en este momento
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.contenedor, fragmento)
-                .addToBackStack(null)
+                //.addToBackStack(null)
                 .commit();
 
 

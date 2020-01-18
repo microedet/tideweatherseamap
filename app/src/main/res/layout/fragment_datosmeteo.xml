@@ -5,13 +5,15 @@
     android:id="@+id/datosmeteo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorMareas"
     tools:context=".fragment.DatosMeteoFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="656dp">
+
         <LinearLayout
             android:id="@+id/linearcontenedor"
             android:layout_width="match_parent"
@@ -23,12 +25,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/design_default_color_primary_dark"
+                android:inputType="textCapCharacters"
                 android:gravity="center"
-                android:paddingTop="30dp"
+                android:paddingTop="5dp"
                 android:paddingBottom="10dp"
                 android:text="@string/nombre_lugar"
                 android:textColor="@color/colorDatosMeteo"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/linearfecha"
@@ -42,11 +46,12 @@
                     android:layout_weight="0.3"
                     android:background="@color/design_default_color_primary"
                     android:gravity="center"
-                    android:paddingTop="30dp"
+                    android:paddingTop="5dp"
                     android:paddingBottom="10dp"
                     android:text="@string/fecha"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewFecha"
@@ -55,7 +60,7 @@
                     android:layout_weight="0.5"
                     android:background="@color/design_default_color_primary"
                     android:gravity="center"
-                    android:paddingTop="30dp"
+                    android:paddingTop="5dp"
                     android:paddingBottom="10dp"
                     android:textColor="@color/colorDatosMeteo"
                     android:textSize="24sp" />
@@ -74,11 +79,12 @@
                     android:layout_weight="0.5"
                     android:background="@color/colorSol"
                     android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:text="@string/salida_sol"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="30sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/nombrepuestasol"
@@ -87,11 +93,12 @@
                     android:layout_weight="0.5"
                     android:background="@color/colorSol"
                     android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:text="@string/puesta_sol"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="30sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -108,10 +115,10 @@
                     android:layout_weight="1"
                     android:background="@color/colorSol"
                     android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/puestasol"
@@ -120,10 +127,10 @@
                     android:layout_weight="1"
                     android:background="@color/colorSol"
                     android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -139,11 +146,12 @@
                     android:layout_weight="0.5"
                     android:background="@color/colorLuna"
                     android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:text="@string/salida_luna"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="30sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/nombrepuestaluna"
@@ -152,13 +160,15 @@
                     android:layout_weight="0.5"
                     android:background="@color/colorLuna"
                     android:gravity="center"
-                    android:paddingTop="10px"
-                    android:paddingBottom="10px"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:text="@string/puesta_luna"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="30sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/linearhorasluna"
                 android:layout_width="match_parent"
@@ -172,10 +182,10 @@
                     android:layout_weight="1"
                     android:background="@color/colorLuna"
                     android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/puestaluna"
@@ -184,10 +194,10 @@
                     android:layout_weight="1"
                     android:background="@color/colorLuna"
                     android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -201,11 +211,12 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorTemperatura"
                     android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:text="Temperatura"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="30sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -223,10 +234,10 @@
                     android:layout_weight="0.5"
                     android:background="@color/colorTemperatura"
                     android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/mintemperatura"
@@ -235,10 +246,10 @@
                     android:layout_weight="0.5"
                     android:background="@color/colorTemperatura"
                     android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -257,56 +268,22 @@
                     android:paddingBottom="10dp"
                     android:text="@string/mareas"
                     android:textColor="@color/colorDatosMeteo"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
-            <!--<LinearLayout
-                android:id="@+id/linearlistadomareas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/horamarea1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/colorMareas"
-                    android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/colorDatosMeteo"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/altura1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/colorMareas"
-                    android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/colorDatosMeteo"
-                    android:textSize="24sp" />
-
-
-            </LinearLayout>-->
             <ListView
                 android:id="@+id/listadomareas"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="217dp"
                 tools:listitem="@layout/itemtide" />
 
 
         </LinearLayout>
 
     </ScrollView>
-
-
-
-
 
 
 </FrameLayout>

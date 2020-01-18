@@ -1,9 +1,15 @@
 package pastor.vicente.tideweathersea;
 
-public class Astronomy {
-    String sunrise, sunset, moonrise, moonset,maxtempC,mintempC;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-    public Astronomy(String sunrise, String sunset, String moonrise, String moonset, String maxtempC, String mintempC) {
+public class Astronomy {
+    String fecha,sunrise, sunset, moonrise, moonset,maxtempC,mintempC;
+
+    public Astronomy(String fecha,String sunrise, String sunset, String moonrise, String moonset, String maxtempC, String mintempC) {
+
+        this.fecha= fecha;
         this.sunrise = sunrise;
         this.sunset = sunset;
         this.moonrise = moonrise;
@@ -14,6 +20,15 @@ public class Astronomy {
 
     public Astronomy(){
 
+    }
+
+    public String getDate() {
+
+        return fecha;
+    }
+
+        public void setDate(String date) {
+        this.fecha = fecha;
     }
 
     public String getSunrise() {
@@ -62,5 +77,14 @@ public class Astronomy {
 
     public void setMintempC(String mintempC) {
         this.mintempC = mintempC;
+    }
+
+
+    public String formatdate(String fecha){
+
+        Date date = new Date(fecha);
+        SimpleDateFormat sd = new SimpleDateFormat("LLL dd,yyyy");
+        return sd.format(date);
+
     }
 }

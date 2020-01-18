@@ -44,13 +44,12 @@ public final class QueryUtils {
                         JSONObject datostide_data = tide_data.getJSONObject(h);
                         String tideTime = datostide_data.getString("tideTime");
                         String tideHeight_mt = datostide_data.getString("tideHeight_mt");
-                        Log.i("PEPE", tideTime+ " "+" "+tideHeight_mt);
                         Tides mareadia = new Tides(tideTime, tideHeight_mt);
                         mareasdeldia.add(mareadia);
                     }
                 }
 
-                Astronomy astronomyObject = new Astronomy(sunset,sunrise,moonset,moonrise,maxtempC,mintempC);
+                Astronomy astronomyObject = new Astronomy(date,sunset,sunrise,moonset,moonrise,maxtempC,mintempC);
                 meteo=new Meteo(astronomyObject, mareasdeldia);
             }//del for
         }//del try

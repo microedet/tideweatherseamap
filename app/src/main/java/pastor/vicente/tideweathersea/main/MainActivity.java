@@ -1,30 +1,18 @@
 package pastor.vicente.tideweathersea.main;
 
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-
-
 import android.view.Menu;
 import android.view.MenuItem;
-
-
 import pastor.vicente.tideweathersea.R;
 import pastor.vicente.tideweathersea.fragment.DatosMeteoFragment;
 import pastor.vicente.tideweathersea.fragment.Listadolugares;
-import pastor.vicente.tideweathersea.data.DataBaseRoom;
+import pastor.vicente.tideweathersea.mapsActivity.MapsActivity;
 
 public class MainActivity extends AppCompatActivity  implements  Listadolugares.Enviodecardview {
-
-
-    private DataBaseRoom dbRoom;
-    CardView cardView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,25 +20,19 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //boton atras
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-
-        if (networkInfo != null && networkInfo.isConnected()) {
-            // Si hay conexión a Internet en este momento
 
             //para que pinte si no hay fragment
-            if(savedInstanceState==null){
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.contenedor, new Listadolugares())
-                    .commit();}
+            if (savedInstanceState == null) {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contenedor, new Listadolugares())
+                        .commit();
+            }else{
 
-        } else {
-            // No hay conexión a Internet en este momento
-        }
-
-
+            }
 
     }
 
@@ -64,27 +46,27 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            // Respond to a click on the "Insert dummy data" menu option
+            case R.id.Ver_mapas:
+
+                Intent intent = new Intent(this, MapsActivity.class);
+                startActivity(intent);
+                return true;
+
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    /*
-    @Override
+   /* @Override
     protected void onDestroy() {
 
         dbRoom.close();
         super.onDestroy();
-    }
-*/
+    }*/
+
 
     @Override
     public void enviodecardview(Lugar lugar) {
@@ -99,10 +81,20 @@ public class MainActivity extends AppCompatActivity  implements  Listadolugares.
         Fragment fragmento=new DatosMeteoFragment();
         fragmento.setArguments(datosAEnviar);
 
+       /* Muestraemail_Fragment muestraemailFragment=(Muestraemail_Fragment) getSupportFragmentManager().findFragmentById(R.id.Muestraemail_Fragment);
+        if(muestraemailFragment!=null){
+            muestraemailFragment.detallesemail(email);
+        }else{
+
+            Intent intent=new Intent(this, DetallesEmailActivity.class);
+            intent.putExtra("correo", email);
+            startActivity(intent);
+        }*/
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.contenedor, fragmento)
-                //.addToBackStack(null)
+                .addToBackStack(null)
                 .commit();
 
 

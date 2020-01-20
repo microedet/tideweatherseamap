@@ -34,6 +34,7 @@ import pastor.vicente.tideweathersea.main.LugarAdapter;
 import pastor.vicente.tideweathersea.R;
 import pastor.vicente.tideweathersea.data.LugarViewModel;
 import pastor.vicente.tideweathersea.main.MainActivity;
+import pastor.vicente.tideweathersea.main.TidesAdapter;
 
 
 public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonClikedListener {
@@ -106,7 +107,7 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
 
 
 
-    private void ventana() {
+    public void ventana() {
         builder = new AlertDialog.Builder(getContext());
          view = LayoutInflater.from(getContext()).inflate(R.layout.ventanalugar, null);
 
@@ -150,8 +151,6 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
     }
 
 
-
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -163,8 +162,6 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
         }
     }
     
-
-
 
 
     @Override
@@ -189,14 +186,6 @@ public class Listadolugares extends Fragment implements  LugarAdapter.OnButtonCl
 
     }
 
-    private void Cargardetalles(final Lugar lugar) {
-        Toast.makeText(getContext(), "lanzado desde fragment", Toast.LENGTH_SHORT).show();
-        //((MainActivity) v.getContext()).confirmConnection(address);
-        // datosmeteo(lugar);
-       // enviodecardvi
-
-
-    }
 
     private void editLugar(final Lugar lugar) {
 

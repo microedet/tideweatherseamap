@@ -34,7 +34,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:hint="Latitud"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:maxLines="2"></EditText>
 
     <EditText
@@ -46,7 +46,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:hint="Longitud"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:maxLines="2"></EditText>
 
 

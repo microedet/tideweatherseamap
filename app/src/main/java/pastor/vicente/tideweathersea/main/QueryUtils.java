@@ -1,17 +1,10 @@
 package pastor.vicente.tideweathersea.main;
 
-import android.util.Log;
-
-import com.android.volley.toolbox.JsonObjectRequest;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import pastor.vicente.tideweathersea.Astronomy;
 
 public final class QueryUtils {
     //constructor
@@ -48,6 +41,9 @@ public final class QueryUtils {
                         mareasdeldia.add(mareadia);
                     }
                 }
+
+                //cambiar la fecha al formato del telefono.
+
 
                 Astronomy astronomyObject = new Astronomy(date,sunset,sunrise,moonset,moonrise,maxtempC,mintempC);
                 meteo=new Meteo(astronomyObject, mareasdeldia);

@@ -7,5 +7,13 @@
     <string name="salida_luna">Moonrise</string>
     <string name="nombre_lugar">Place:</string>
     <string name="fecha">"Date "</string>
-    <string name="mareas">Mareas</string>
+    <string name="mareas">Tide</string>
+    <string name="action_settings">Map</string>
+    <string name="temperatura">Temperature</string>
+    <string name="sin_conexion_de_internet">there is no Internet conection</string>
+    <string name="title_activity_maps">Maps</string>
+    <string name="permission_rationale_location">The location permit is required for the application to work</string>
+    <string name="location_permission_denied">For the operation of the application the location permit is necessary</string>
+    <string name="permission_required_toast">The location permit is required for the application to work</string>
+
 </resources>

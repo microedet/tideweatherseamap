@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">TUS MAREAS</string>
-    <string name="action_settings" translatable="false">Settings</string>
+    <string name="action_settings" translatable="true">Mapa</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Internet no contectado</string>
     <string name="title_activity_main2" translatable="false">Main2Activity</string>
     <string name="salida_sol">Salida Sol</string>
     <string name="puesta_sol">Puesta Sol</string>
@@ -12,4 +12,10 @@
     <string name="salida_luna">Salida Luna</string>
     <string name="fecha">Fecha</string>
     <string name="mareas">Mareas</string>
+    <string name="title_activity_maps">Mapas</string>
+    <string name="permission_rationale_location">Es necesario el permiso de localización para el funcionamiento de la aplicación</string>
+    <string name="location_permission_denied">Para el funcionamiento de la aplicación es necesario el permiso de localización</string>
+    <string name="permission_required_toast">El permiso al acceso de localización es necesario</string>
+    <string name="temperatura">Temperatura</string>
+    <string name="sin_conexion_de_internet">SIN CONEXION DE INTERNET</string>
 </resources>

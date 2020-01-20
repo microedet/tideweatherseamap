@@ -2,8 +2,6 @@ package pastor.vicente.tideweathersea.main;
 
 import java.util.ArrayList;
 
-import pastor.vicente.tideweathersea.Astronomy;
-
 public class Meteo {
     Astronomy astronomy;
     ArrayList <Tides> tides=new ArrayList<Tides>();

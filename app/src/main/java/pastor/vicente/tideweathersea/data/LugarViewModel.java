@@ -54,7 +54,6 @@ public class LugarViewModel extends AndroidViewModel {
 
             if (lugares.length != 0) {
                 lugar = lugares[0];
-                //id = dbRoom.lugarDao().insertLugar(lugares[0]);
                 id = dbRoom.lugarDao().insertLugar(lugares[0]);
                 lugar.setId(id);
             }

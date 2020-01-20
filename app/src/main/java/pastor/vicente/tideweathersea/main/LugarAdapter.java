@@ -1,13 +1,11 @@
 package pastor.vicente.tideweathersea.main;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -52,7 +50,6 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolder> 
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("vicente2","el dato es "+lugares.get(position));
                 listener.onButtonCliked(view, lugares.get(position));
 
             }
@@ -62,7 +59,6 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolder> 
             @Override
             public void onClick(View view) {
                 listener.onButtonCliked(view, lugares.get(position));
-                Log.e("vicente2","el datos es "+lugares.get(position));
 
             }
         });

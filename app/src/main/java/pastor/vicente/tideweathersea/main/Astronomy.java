@@ -1,4 +1,4 @@
-package pastor.vicente.tideweathersea;
+package pastor.vicente.tideweathersea.main;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
